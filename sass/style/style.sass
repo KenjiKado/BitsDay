@@ -1,0 +1,1295 @@
+@import compass/reset
+@import compass/css3
+@import compass/layout
+@import compass/typography
+@import compass/utilities
+
+//IMPORT
+@import "../grid.scss"
+@import "../font-awesome.scss"
+
+//FONTS 
+@import url('https://fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=cyrillic,latin-ext')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese')
+
+// CONFIG
+$base-font-size: 16px !global
+$base-line-height: 24px !global
++establish-baseline
+
+//COLORS 
+$darkish-blue: #003197
+$light-blue-grey: #d2d9ea
+$orangish: #ff7630
+$white-two: #f7f7f7
+$bluey-grey: #9aa2b6
+$focus: #BBC6E2
+
+%inline
+	display: inline-block
+	margin: 0 -3px
+	float: none
+//BTNS
+.btn-container
+	.btn
+		display: inline-block
+		width: 100%
+		text-align: center
+		+adjust-font-size-to(14px)
+		line-height: 1.3		
+		font-weight: 600
+		padding: 8px 0
+		border: 0
+		outline: none
+		color: #fff
+		&.orange-btn
+			background-color: $orangish
+			&:hover
+				background-color: #db530d
+			&:active, &.active
+				background-color: #a33a04
+//TYPOGRAPHY
+h1
+	font-family: "Exo 2", sans-serif
+	font-weight: 600
+	+adjust-font-size-to(35px)
+	line-height: 1.3
+	font-style: normal
+h2
+	font-family: "Exo 2", sans-serif
+	font-weight: 600
+	+adjust-font-size-to(28px)
+	line-height: 1.2
+	font-style: normal
+h3
+	font-family: "Exo 2", sans-serif
+	font-weight: 600
+	+adjust-font-size-to(22px)
+	line-height: 1.3
+	font-style: normal
+h4
+	font-family: "Exo 2", sans-serif
+	+adjust-font-size-to(28px)
+	line-height: 1.3
+	font-weight: 600
+	color: #ffffff
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5)
+h5
+	font-family: "Exo 2", sans-serif
+	+adjust-font-size-to(16px)
+	line-height: 1.3
+	font-weight: 600	
+strong, b
+	font-weight: bold
+a
+	font-family: "Open Sans", sans-serif
+	+adjust-font-size-to(16px)
+	line-height: 1.2
+	color: #333
+	text-decoration: none
+	&:hover
+		text-decoration: none
+		color: #e4690a
+		cursor: pointer
+	&.active
+		color: $orangish	
+	&:focus
+		text-decoration: none
+		outline: none
+//FORM
+form
+	.row-block
+		width: 100%
+		display: table
+		position: relative
+		.half-row
+			display: table-cell
+			width: 50%
+			padding-right: 15px
+			&:last-child
+				padding-right: 0	
+		.table-row
+			position: relative
+			display: table-cell
+			padding-right: 7px
+			&:last-child
+				padding-right: 0
+	input[type=text], textarea, select
+		width: 100%
+		height: 30px
+		font-family: "Open Sans", sans-serif
+		+adjust-font-size-to(14px)
+		line-height: 1.5
+		background-color: #ffffff
+		border-radius: 0
+		border: 2px solid $light-blue-grey
+		color: $bluey-grey
+		+input-placeholder
+			font-family: "Open Sans", sans-serif
+			color: $bluey-grey
+		&:focus
+			border-color: $focus	
+			outline: none
+		&.error
+			border-color: rgba(#fa3952, 0.5)
+	input
+		padding: 4px 10px
+	textarea
+		height: 210px
+		padding: 7px 10px		
+		resize: none
+	input[type=file]
+		display: none
+	label[for=file]
+		display: table-cell
+		width: 25%
+		vertical-align: top
+	.file-text
+		display: table-cell
+		vertical-align: top
+	.file-btn
+		display: inline-block
+		padding: 8px 12px
+		+adjust-font-size-to(14px)
+		line-height: 1.5		
+		color: $bluey-grey
+		background-color: #eee
+		cursor: pointer
+		&:hover
+			background-color: #e3e8f2
+	.file-text
+		p
+			+adjust-font-size-to(12px)
+			line-height: 1.2
+			text-align: left
+			color: #7c8599
+	select
+		padding: 0 8px
+		-webkit-appearance: none
+		appearance: none
+		background-image: url("../img/down.jpg")
+		background-repeat: no-repeat
+		background-position: 96% center
+		&:hover
+			cursor: pointer
+	label.error
+		+adjust-font-size-to(14px)
+		line-height: 1.3
+		color: #fa3952
+//ADV blocks
+.adv-container
+	display: table
+	width: 100%
+	margin: auto
+.adv-block
+	width: 100%
+	display: table-cell
+	background-color: #9a9a9a
+	vertical-align: middle
+	&-big
+		height: 180px
+		margin: auto
+	&-normal
+		height: 90px
+	&-small
+		height: 250px		
+	.text-block
+		font-family: "Open Sans", sans-serif
+		+adjust-font-size-to(55px)
+		line-height: 1.2
+		font-weight: 600
+		text-align: center
+		color: #ffffff
+		text-shadow: 0 3px 7px #000000
+//INFOBLOCKS		
+.info-container
+	display: table
+	margin: 5px 0 15px
+	width: 100%	
+	.info-block	
+		display: table-cell
+		width: 100%
+		padding: 10px 20px
+		vertical-align: bottom
+		background-color: #9a9a9a
+		&-normal
+			height: 140px
+			.btn-container
+				.info-btn
+					+adjust-font-size-to(12px)
+					line-height: 2
+			.title-block
+				+adjust-font-size-to(18px)
+				line-height: 1.3
+		&-big
+			height: 300px
+			.btn-container
+				.info-btn
+					padding: 3px 11px
+					+adjust-font-size-to(14px)
+					line-height: 2
+			.title-block
+				+adjust-font-size-to(22px)
+				line-height: 1.3
+		.btn-container
+			display: block
+			padding: 0 0 10px 
+			width: 100%
+			text-align: center
+			.info-btn
+				display: inline-block
+				padding: 0 11px
+				font-family: "Open Sans", sans-serif
+				font-weight: 600
+				background-color: $darkish-blue
+				color: #fff
+		.title-block
+			font-family: "Exo 2", sans-serif
+			font-weight: 600
+			text-align: center
+			color: #ffffff
+		.review-block
+			display: table
+			padding: 5px 0 0 
+			width: 100%
+			>*
+				display: table-cell
+				width: 50%
+				vertical-align: middle
+				&:first-child
+					text-align: right
+				&:last-child
+					text-align: left
+				a
+					font-family: "Open Sans", sans-serif
+					+adjust-font-size-to(13px)
+					line-height: 1.2
+					text-align: left
+					color: #ffffff	
+					opacity: 0.9		
+					&:before
+						display: inline-block	
+						font-family: "FontAwesome", sans-serif
+						margin-right: 5px					
+			.views
+				padding-right: 10px
+				a
+					&:before
+						content: "\f06e"
+			.reviews
+				padding-left: 10px
+				a
+					&:before		
+						content: "\f075"
+//STYlE
+body
+	font-family: "Open Sans", sans-serif
+	background-color: #f7f7f7
+.test-img
+	width: 100%	
+table
+	width: 100%
+	background-color: #FFF
+	thead
+		tr
+			th
+				padding: 25px 0px 10px
+				+adjust-font-size-to(14px)
+				line-height: 1.3
+				text-align: center
+				border-bottom: 2px solid #bbc6e2	
+				&:last-child, &:nth-child(5), &:nth-child(4)	
+					width: 15%
+	tbody
+		tr
+			td
+				padding: 10px 0
+				vertical-align: middle
+				span
+					display: block
+					margin: 0 auto
+					width: 20px
+					height: 20px
+					text-align: center
+					+adjust-font-size-to(12px)
+					line-height: 20px
+					font-weight: 600
+					border-radius: 50%							
+				p
+					+adjust-font-size-to(14px)
+					line-height: 1.2		
+					text-align: center						
+				.image-block
+					background-color: #9a9a9a
+				.title-block
+					font-family: "Exo 2", sans-serif
+					+adjust-font-size-to(16px)
+					line-height: 1.2	
+					font-weight: 600	
+				.social-btns
+					text-align: center
+					padding-right: 15px
+					a
+						margin-right: 5px
+						+adjust-font-size-to(14px)
+						line-height: 1.2		
+						color: #bbc6e2	
+						&:last-child
+							margin-right: 0	
+				.plus, .minus
+					display: inline
+					+adjust-font-size-to(14px)
+					line-height: 1.3
+					font-weight: bold
+					&:before
+						content: "\f062"
+						display: inline-block
+						margin-right: 5px
+						font-family: "FontAwesome", sans-serif				
+				.minus
+					color: #ff0221
+					&:before
+						transform: rotate(135deg)
+				.plus
+					color: #3bb100
+					&:before
+						transform: rotate(45deg)
+				.description
+					padding: 5px 0
+					+adjust-font-size-to(14px)
+					line-height: 1.2		
+					color: $bluey-grey	
+				&:first-child
+					width: 5%
+				&:nth-child(2)
+					width: 10%
+			&:nth-child(even)
+				background-color: #f8f8f8
+				border-bottom: 2px solid #bbc6e2	
+				td
+					padding: 5px 0			
+			&:nth-child(-n+20)
+				background-color: #f6f7fb
+				td
+					&:first-child
+						span
+							background-color: $orangish
+							color: #fff
+			&:nth-child(-n+20):not(:nth-child(odd))
+				background-color: #ECEFF6
+.select-by
+	ul
+		width: 100%
+		li
+			display: table-cell	
+			padding-right: 4px
+			&:last-child
+				padding-right: 0
+			a
+				display: inline-block
+				+adjust-font-size-to(14px)
+				line-height: 1.3					
+				padding: 5px 10px
+				border: solid 2px $light-blue-grey
+				color: #9aa2b6		
+				&:hover
+					border-color: $focus	
+				&:active, &.active
+					border-color: $darkish-blue
+					color: $darkish-blue	
+.sort
+	width: 70%
+	text-align: right
+	float: right
+	>*
+		display: table-cell
+		.table-row.search-block
+			width: 60%
+	.searchbox
+		padding: 0
+	.sort-block
+		width: 1%
+		padding-left: 15px					
+header
+	height: 75px
+	.logo
+		display: block
+		padding: 22.5px 0
+		font-family: "Exo 2", sans-serif
+		+adjust-font-size-to(25px)
+		line-height: 1.2
+		font-weight: 600
+		text-align: left
+		color: #333
+		&:hover
+			text-decoration: none
+			color: #333
+		&:before
+			content: ""
+			display: inline-block
+			margin-right: 15px
+			width: 30px
+			height: 30px
+			border-radius: 100px
+			background-color: #ff8546		
+			float: left
+	nav
+		padding: 25px 0
+		ul
+			width: 100%
+			text-align: right
+			li
+				position: relative
+				display: inline-block
+				padding: 0 15px
+				vertical-align: middle
+				&:last-child
+					padding-right: 0
+					img
+						width: 25px
+				a
+					font-family: "Open Sans", sans-serif
+					font-size: 1em
+					font-weight: 600	
+					.fa
+						display: table-cell
+.submenu
+	display: none
+	position: absolute
+	min-width: 180px
+	padding: 5px 0
+	top: 110%
+	left: 15%
+	background-color: #FFF	
+	z-index: 1000	
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2)	
+	ul
+		text-align: left
+		li
+			width: 100%
+			padding: 0
+			a
+				display: block
+				width: 100%
+				padding: 5px 10px
+				font-family: "Open Sans", sans-serif
+				font-size: 1em
+				font-weight: 600
+				color: #333					
+				&:hover
+					color: initial
+					background-color: #f1f3f8
+				img
+					margin-right: 5px
+					vertical-align: middle
+.currencies		
+	padding: 5px 0
+	background-color: $darkish-blue
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2)					
+	.currencies-list
+		ul
+			width: 100%
+			li
+				display: inline-block
+				padding: 0px 15px
+				+adjust-font-size-to(14px)
+				line-height: 1.3
+				color: #fff
+				&:first-child
+					padding-left: 0
+	.other-currencies
+		text-align: right
+		a
+			+adjust-font-size-to(14px)
+			line-height: 1.3
+			text-transform: lowercase
+			color: #fff
+			opacity: 0.5
+			&:hover
+				opacity: 0.8
+			&.active
+				opacity: 1	
+.top-banners
+	.container
+		>.row
+			&:last-child
+				&:not(:first-child)
+					padding: 15px 0 0
+.bottom-banners
+	padding: 70px 0	0				
+.content
+	.breadcrumbs
+		.breadcrumb
+			display: inline-block
+			a
+				font-family: "Exo 2", sans-serif
+				+adjust-font-size-to(18px)
+				line-height: 1.3	
+				color: $darkish-blue		
+			&:first-child
+				a
+					font-weight: 600
+					+adjust-font-size-to(22px)
+					line-height: 1.3
+					font-style: normal	
+			&:after
+				content: "\f105"
+				display: inline-block
+				margin: 0 5px
+				font-family: "FontAwesome", sans-serif
+				+adjust-font-size-to(22px)
+				line-height: 1.3	
+				color: $darkish-blue	
+			&:last-child
+				&:after
+					content: initial			
+	.news-filter
+		padding: 20px 0 0
+		nav
+			height: 30px
+			ul 
+				li
+					display: inline-block
+					margin-right: 10px
+					a
+						display: table
+						height: 30px
+						padding: 0
+						border: 2px solid $light-blue-grey
+						color: $bluey-grey
+						>*
+							display: table-cell
+							vertical-align: middle
+							&:first-child
+								padding-left: 15px
+							&:last-child
+								padding-right: 15px	
+						span
+							font-family: "Open Sans", sans-serif
+							+adjust-font-size-to(11px)
+							color: $bluey-grey	
+							padding-left: 5px
+							padding-right: 10px	!important	
+						i.fa
+							padding-left: 10px !important
+							padding-right: 5px
+							color: $orangish					
+						&.active
+							color: $darkish-blue
+							border-color: $darkish-blue
+						&:hover
+							color: #9aa2b6
+							border-color: #9aa2b6						
+	.searchbox
+		padding: 20px 0 0
+		.search-block
+			position: relative
+			&:after
+				content: "\f002"
+				display: block
+				position: absolute
+				right: 10px
+				top: 8%
+				font-family: "FontAwesome", sans-serif
+				color: $bluey-grey
+		.search-block.table-row
+			&:after
+				right: 20px
+	.news-container, .events-block
+		.col-xs-8
+			padding: 0
+		.news-block
+			min-height: 250px	
+		.news-block, .event
+			margin: 20px 0
+			padding: 0 15px
+			background-color: #FFF
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2)
+			.image-block
+				width: 100%
+				height: 158px
+				margin: 15px 0
+				background-color: #9a9a9a
+				img
+					max-width: 100%
+			.new-info
+				display: table
+				width: 100%
+				>*
+					display: table-cell
+					+adjust-font-size-to(13px)
+					line-height: 1.3
+					text-align: left
+					color: #7c8599
+					&:last-child
+						text-align: right
+					&:before
+						display: inline-block
+						margin-right: 5px
+						font-family: "FontAwesome", sans-serif
+						font-size: 11px
+						color: $light-blue-grey
+						vertical-align: bottom
+				.views
+					&:before
+						content: "\f06e"
+				.comments
+					&:before
+						content: "\f075"		
+			.new-content, .event-content
+				padding: 15px 0 0
+				position: relative
+				border-left: 2px solid #eee
+				.text-block
+					padding: 0 15px 
+					p
+						padding: 10px 0px 35px
+						+adjust-font-size-to(14px)
+						line-height: 1.3
+					.event-info
+						margin-bottom: 10px
+						>*
+							display: inline-block
+						.date
+							margin-right: 10px	
+							padding: 3px 10px
+							+adjust-font-size-to(13px)
+							line-height: 1.3
+							background-color: #eee	
+						.social-btns
+							a
+								+adjust-font-size-to(14px)
+								line-height: 1.3			
+								color: #bbc6e2															
+				.read-more
+					text-align: center
+					padding: 10px 0 0
+					border-top: 2px solid #eee
+					a
+						font-family: "Open Sans", sans-serif
+						+adjust-font-size-to(14px)
+						line-height: 1.3
+						font-weight: 600
+						color: #ff8546					
+			.event-content
+				.read-more
+					padding-bottom: 15px	
+		.event
+			margin: 20px 0
+			.image-block
+				margin-bottom: 0
+			.image-block + span
+				display: block
+				margin: 10px 0
+				+adjust-font-size-to(14px)
+				line-height: 1.3				
+	.news-container .news-block, article
+		.tags
+			padding: 10px 0 0
+			ul
+				li
+					display: inline-block
+					padding-right: 10px
+					a
+						display: inline-block
+						height: 25px
+						text-align: center
+						padding: 0 6px
+						+adjust-font-size-to(13px)
+						line-height: 1.3
+						background-color: #eee
+						&:hover
+							color: inherit
+							background-color: #e3e8f2
+						p
+							display: inline-block
+							vertical-align: sub
+	.news-container						
+		.editor-choice
+			display: table
+			width: 100%
+			margin: 20px 0
+			background-color: #9a9a9a
+			.new-block
+				display: table-cell
+				position: relative
+				height: 125px
+				vertical-align: middle
+				text-align: center
+	.news-container .editor-choice .new-block, article .article-title.editor-choice, .events .events-block .event.editor-choice
+		&:before
+			content: ""
+			position: absolute
+			display: block
+			width: 30px
+			right: 15%
+			top: 10%
+			border-width: 15px 10px
+			border-style: solid
+			border-color: $orangish $orangish $orangish transparent			
+		&:after
+			content: "Editor's choice"
+			display: block
+			height: 30px
+			position: absolute
+			padding: 2px 15px
+			top: 10%
+			right: 0
+			font-family: "Open Sans", sans-serif
+			+adjust-font-size-to(14px)
+			font-weight: 600
+			text-align: left
+			color: #ffffff
+			background-color: $orangish			
+	.more-articles
+		width: 100%
+		padding: 20px 0 15px
+		text-align: center
+		a
+			display: inline-block
+			padding: 5px 0
+			+adjust-font-size-to(14px)
+			line-height: 1.3
+			border-bottom: 2px solid $orangish
+			vertical-align: middle
+			&:after 
+				content: "\f107"
+				display: inline-block
+				margin-left: 20px
+				font-size: 18px
+				font-family: "FontAwesome", sans-serif
+				color: rgba(0, 0, 0, 0.87)
+				vertical-align: middle
+	.contacts
+		padding: 20px 0
+		h3
+			color: $darkish-blue		
+		form
+			margin: 20px 0
+			padding: 10px 15px
+			background-color: #FFF	
+			.row-block
+				padding: 5px 0
+			.btn-container
+				padding: 15px 0
+	article
+		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2)
+		.article-title-container
+			display: table
+			margin: 20px 0 0
+			width: 100%
+			.article-title
+				display: table-cell
+				position: relative
+				width: 100%
+				height: 240px
+				padding: 15px 20px
+				background-color: #9a9a9a
+				vertical-align: bottom
+				h2
+					color: #fff
+				p
+					margin: 5px 0
+					+adjust-font-size-to(13px)
+					line-height: 1.3	
+					color: #fff	
+		.article-content
+			padding: 15px 20px 
+			background-color: #FFF
+			>p
+				margin: 10px 0		
+			.image-block
+				img
+					max-width: 100%
+				span
+					+adjust-font-size-to(14px)
+					line-height: 1.3						
+					color: $bluey-grey	
+			.read-also
+				padding: 10px 20px 20px
+				.title-block
+					padding-bottom: 5px
+					border-bottom: 2px solid #bbc6e2
+				.adv-banners
+					width: 100%
+					display: table
+					padding: 15px 0
+					.adv-banner
+						display: inline-block
+						width: calc(100%/3 - 8px) 
+						margin-right: 10px
+						vertical-align: top
+						&:last-child
+							margin-right: 0
+						p
+							margin: 10px 0
+							+adjust-font-size-to(13px)
+							line-height: 1.3							
+			.share
+				padding: 10px 5px 0
+				ul
+					li
+						display: inline-block
+						padding-right: 10px
+						&:last-child
+							padding-right: 0
+						a
+							+adjust-font-size-to(13px)
+							line-height: 1.3	
+							color: #7c8599
+							.fa
+								font-size: 16px
+								color: #9aa2b6
+	.related-posts
+		margin: 20px 0
+		padding: 15px 15px 5px
+		background-color: #FFF	
+		.title-block
+			padding: 5px 0 0
+			//border-bottom: 2px solid $light-blue-grey
+			h3
+				color: $darkish-blue	
+		.posts-block
+			margin: 10px 0
+			.one-post
+				display: table
+				width: 100%
+				padding: 12px 0
+				border-top: 2px solid $light-blue-grey
+				>*
+					display: table-cell		
+				>*:not(:first-child)	
+					+adjust-font-size-to(13px)
+					line-height: 1.3					
+					color: #7c8599	
+					&:last-child
+						text-align: right
+					&:before
+						margin-right: 5px
+						font-size: 12px
+						font-family: "FontAwesome", sans-serif
+						color: $light-blue-grey
+				a
+					+adjust-font-size-to(14px)
+					line-height: 1.3								
+				.views
+					padding-right: 10px
+					&:before
+						content: "\f06e"
+				.comments
+					padding-left: 10px
+					&:before		
+						content: "\f075"						
+	.events
+		.events-title
+			display: table
+			width: 100%
+			>*
+				display: table-cell
+			.title-block
+				width: 30%
+				color: $darkish-blue
+			form
+				width: 70%
+				.row-block
+					.table-row
+						&:first-child
+							width: 25%
+							margin-bottom: 10px
+					&:first-child
+						margin-bottom: 10px
+		.events-block
+			.event
+				position: relative
+	.table-block
+		padding: 20px	0			
+		&-title
+			display: table
+			width: 100%
+			>*
+				display: table-cell
+				vertical-align: middle
+			form
+				width: 40%
+		.table-container
+			margin: 20px 0
+			padding: 0px
+			background-color: #FFF
+	.traidings
+		table
+			thead
+				tr
+					th
+						+adjust-font-size-to(13px)
+						line-height: 1.3
+						color: #7c8599						
+			tbody
+				tr
+					td
+						.image-block
+							width: 55px
+							height: 55px
+					&:nth-child(-n+20)
+						td
+							&:first-child
+								span
+									background-color: $orangish
+									color: #fff						
+	.ratings
+		table
+			thead
+				tr
+					th
+						+adjust-font-size-to(13px)
+						line-height: 1.3
+						color: #7c8599
+						text-align: right
+						padding-right: 15px
+			tbody
+				tr
+					border-bottom: 2px solid #bbc6e2
+					td
+						text-align: left
+						.image-block
+							width: 60px
+							height: 60px
+						.fa
+							color: #bbc6e2
+						&:first-child
+							width: 5%
+						&:nth-child(2)
+							width: 10%
+						&:last-child
+							+adjust-font-size-to(14px)
+							line-height: 1.3
+							text-align: right
+							padding-right: 15px
+							.fa
+								font-size: 16px
+					&:nth-child(n+10)
+						background-color: inherit
+						td
+							&:first-child
+								span
+									background-color: transparent
+									color: #333		
+					&:nth-child(-n+10)
+						background-color: #f6f7fb !important
+						td
+							&:first-child
+								span
+									background-color: #ff7630
+									color: #fff
+	.influencers	
+		table
+			thead
+				tr
+					th
+						+adjust-font-size-to(13px)
+						line-height: 1.3
+						color: #7c8599
+			tbody
+				tr
+					td
+						.image-block
+							width: 60px
+							height: 60px	
+						.social-btns, .title-block
+							display: inline-block	
+							margin: 0 10px
+						.description
+							font-size: 14px
+						&:last-child
+							width: 25%
+							+adjust-font-size-to(14px)
+							line-height: 1.4																			
+	.coins
+		table
+			thead
+				tr
+					th
+						&:nth-last-child(2), &:nth-last-child(4)
+							background-color: rgba(#e3e8f2, 0.3)						
+			tbody
+				tr
+					td
+						.image-block
+							width: 25px
+							height: 25px
+						.price
+							font-family: "Exo 2", sans-serif
+							font-weight: 600
+							cursor: pointer
+							&:hover
+								color: inherit
+							&:after
+								content: "\f0d7"
+								display: inline-block
+								margin-left: 5px
+								font-family: "FontAwesome", sans-serif
+								font-size: 14px
+								color: #9aa2b6
+					&:nth-child(odd)
+						td
+							&:nth-last-child(2), &:nth-last-child(4)
+								background-color: rgba(#e3e8f2, 0.3)
+					&:nth-child(odd)
+						td
+							&:nth-child(n+4)
+								text-align: center	
+					&:nth-child(even)
+						td
+							padding: 3px 0
+							&:nth-child(2)
+								+adjust-font-size-to(14px)
+								line-height: 1.3						
+	.ico
+		table
+			thead
+				tr
+					th
+						+adjust-font-size-to(13px)
+						line-height: 1.2						
+						color: $bluey-grey
+						a
+							display: inline-block
+							padding: 5px
+							color: $bluey-grey
+							&.active
+								background-color: #ff8546
+								color: #fff
+			tbody
+				tr
+					&:nth-child(odd)
+						td
+							text-align: center
+							.title-block
+								text-align: left
+					td
+						.image-block
+							width: 25px
+							height: 25px
+						.date
+							+adjust-font-size-to(13px)
+							line-height: 1.2						
+							color: #7c8599
+						.price
+							font-family: "Exo 2", sans-serif
+							font-weight: 600
+							&:before
+								content: "$"
+								display: inline-block
+								margin-right: 5px
+								font-size: 14px
+								color: $bluey-grey
+						.description
+							+adjust-font-size-to(13px)
+							line-height: 1.2												
+						.plus, .minus
+							&:before
+								opacity: 0.3	
+						&:nth-child(2)
+							width: 5%
+						&:nth-child(3)
+							width: 20%
+						&:last-child
+							padding-right: 15px						
+	.ico-calendar
+		table
+			thead
+				tr
+					th
+						+adjust-font-size-to(13px)
+						line-height: 1.3
+						color: #7c8599
+						text-decoration: underline
+			tbody
+				tr
+					background-color: #FFF
+					&:nth-child(odd)
+						td
+							text-align: center
+							.date, .price
+								display: inline-block
+								font-family: "Exo 2", sans-serif
+								font-weight: 600
+							p
+								+adjust-font-size-to(13px)
+								line-height: 1.3
+								color: #7c8599
+							.image-block
+								width: 55px
+								height: 55px	
+							&:first-child
+								padding: 15px
+							&:nth-last-child(2)
+								background-color: rgba(#e3e8f2, 0.3)
+							&:nth-child(2)
+								width: 20%	
+								text-align: left
+								p
+									text-align: left				
+					&:nth-child(even)
+						background-color: #f8f8f8
+						td
+							padding: 10px 15px
+							+adjust-font-size-to(13px)
+							line-height: 1.3
+							color: #7c8599
+							&:nth-child(2)
+								background-color: rgba(#e3e8f2, 0.3)
+	.right-advs
+		padding: 72px 0 0
+		.banner-block
+			margin-bottom: 20px
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2)
+			.image-block
+				width: 100%
+				height: 140px
+				background-color: #9a9a9a
+			.text-block
+				padding: 2px 8px 5px
+				+adjust-font-size-to(12px)
+				line-height: 1.3
+				background-color: #FFF
+				color: #4a4a4a
+	.editor-choice-right
+		margin: 20px 0 0
+		padding: 15px
+		background-color: #FFF
+		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2)
+		.title-block
+			text-align: center
+			color: $darkish-blue
+			padding: 5px 0
+			border-bottom: 2px solid $light-blue-grey
+		.editor-container
+			display: table
+			width: 100%
+			height: 140px
+			margin: 10px 0 15px
+			.editor-banner
+				display: table-cell
+				padding: 10px 40px
+				background-color: #9a9a9a
+				.editor-title
+					+adjust-font-size-to(40px)
+					line-height: 1.3
+					font-weight: 600
+					text-align: center
+					color: #ffffff
+					text-shadow: 0 3px 7px #000000	
+				p
+					font-family: "Exo 2", sans-serif
+					font-weight: 600
+					text-align: center
+					color: #fff
+	.right-banner
+		width: 100%
+		margin: 20px 0 20px
+	.banner-block
+		display: table
+		width: 100%
+		height: 96px
+		>a
+			display: table-cell
+			vertical-align: middle
+			text-align: center
+			color: #fff
+			background-color: #9a9a9a
+			p
+				margin: 5px 0
+				font-family: "Exo 2", sans-serif
+				+adjust-font-size-to(18px)
+				line-height: 1.3
+				font-weight: 600
+				color: #ffffff			
+				text-transform: uppercase
+	.twitter-widget
+		margin: 20px 0
+		background-color: #fff
+		.title-block
+			width: 90%
+			padding: 15px 
+			margin: 0 auto 10px
+			text-align: center
+			border-bottom: 2px solid $light-blue-grey
+			h3
+				color: $darkish-blue
+	.bottom-banner
+		margin: 55px 0 15px
+	.pagenav
+		margin: 50px 0 10px
+		ul
+			display: table
+			width: 90%
+			background-color: #FFF
+			li
+				display: table-cell
+				width: 38px
+				height: 38px
+				text-align: center
+				vertical-align: middle
+				a
+					display: table-cell
+					width: 38px
+					height: 38px
+					+adjust-font-size-to(18px)
+					line-height: 1
+					color: rgba(0, 0, 0, 0.87)					
+					vertical-align: middle
+					&.active, &:hover
+						border: 2px solid $orangish
+footer
+	padding: 30px 0
+	margin-top: 40px
+	background-color: $darkish-blue
+	.about-site
+		+adjust-font-size-to(14px)
+		line-height: 1.5
+		color: rgba(255, 255, 255, 0.5)
+	.footer-nav
+		position: relative
+		>ul
+			>li
+				padding: 0 0 5px
+				+adjust-font-size-to(14px)
+				line-height: 1.5			
+				color: rgba(255, 255, 255, 0.5)
+				.submenu
+					top: -85%
+					left: 85%
+				>a
+					color: rgba(255, 255, 255, 0.5)	
+					text-decoration: underline
+				&:first-child
+					>a
+						text-decoration: none	
+						&:after
+							content: "\f107"
+							padding: 0 2px
+							display: inline-block
+							font-family: "FontAwesome", sans-serif
+	.social-container
+		float: right
+		.social-btns
+			display: table
+			width: 100%
+			padding: 10px 0
+			.btn-container
+				display: table-cell
+				padding-right: 20px
+				a
+					display: table-cell
+					width: 40px
+					height: 40px
+					text-align: center
+					vertical-align: middle
+					border-radius: 50%
+					border: 2px solid #fff
+					color: #fff
+					opacity: 0.5
+					&:hover
+						opacity: 1
+				&:last-child
+					padding-right: 0
